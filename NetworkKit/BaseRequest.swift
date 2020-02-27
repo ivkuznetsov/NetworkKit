@@ -22,7 +22,7 @@ open class BaseRequest: NSObject, ServiceRequest {
         return "(request_path_here)"
     }
     
-    open func requestDictionary() -> [String : Any]? {
+    open func requestContent() -> Any? {
         return nil
     }
     

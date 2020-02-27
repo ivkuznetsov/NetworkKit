@@ -151,7 +151,7 @@ fileprivate extension ServiceProvider {
         if let fileRequest = serviceRequest as? FileUpload {
             request = requestSerializer.multipartFormRequest(withMethod: fileRequest.method(),
                                                              urlString: URL(string: fileRequest.path(), relativeTo: baseURL)?.absoluteString ?? baseURL!.absoluteString,
-                                                             parameters: fileRequest.requestDictionary(),
+                                                             parameters: fileRequest.requestContent() as? [String : Any],
                                                              constructingBodyWith: { (formData) in
                                                             
                                                                 if let path = fileRequest.filePath(), path.count > 0 {
@@ -171,7 +171,7 @@ fileprivate extension ServiceProvider {
         } else {
             request = requestSerializer.request(withMethod: serviceRequest.method(),
                                                 urlString: (URL(string:serviceRequest.path(), relativeTo:baseURL!) ?? baseURL!).absoluteString,
-                                                parameters: serviceRequest.requestDictionary(),
+                                                parameters: serviceRequest.requestContent(),
                                                 error: &error)
         }
         

@@ -16,7 +16,7 @@ import Foundation
     
     func path() -> String
     
-    func requestDictionary() -> [String : Any]?
+    func requestContent() -> Any?
     
     func process(response: Any)
     
