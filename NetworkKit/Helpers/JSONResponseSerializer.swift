@@ -28,6 +28,19 @@ open class JSONResponseSerializer: AFJSONResponseSerializer {
             
             return data
         }
+        
+        if let response = response as? HTTPURLResponse, response.statusCode == 200, let data = data, let pointer = error, let err = pointer.pointee, err.domain == NSCocoaErrorDomain, err.code == 3840 {
+            if let string = String(data: data, encoding: .utf8) {
+                if string.count >= 2, string.hasPrefix("\""), string.hasSuffix("\"") {
+                    pointer.pointee = nil
+                    return string
+                } else if let number = Double(string) {
+                    pointer.pointee = nil
+                    return number
+                }
+            }
+        }
+        
         return object
     }
     
