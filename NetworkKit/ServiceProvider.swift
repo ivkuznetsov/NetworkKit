@@ -196,6 +196,17 @@ fileprivate extension ServiceProvider {
             requestWillSend(urlRequest, serviceRequest: request)
             request.customizing()?.requestWillSend(urlRequest)
             
+            let application = UIApplication.value(forKey: "sharedApplication") as? UIApplication
+            let backgroundTask = application?.beginBackgroundTask(expirationHandler: nil)
+            
+            let endTask = {
+                if let task = backgroundTask {
+                    DispatchQueue.main.async {
+                        application?.endBackgroundTask(task)
+                    }
+                }
+            }
+            
             if let fileRequest = request as? FileRequest {
                 
                 let updateProgress = { (progressObj: Progress) in
@@ -207,8 +218,10 @@ fileprivate extension ServiceProvider {
                 if fileRequest as? FileUpload != nil {
                     
                     task = uploadTask(withStreamedRequest: urlRequest as URLRequest, progress: updateProgress, completionHandler: { (response, object, error) in
+                        
                         let httpResponse = response as! HTTPURLResponse
                         self.process(response: httpResponse, object: object, error: error, request: request, completion: completion)
+                        endTask()
                     })
                 } else {
                     
@@ -220,6 +233,7 @@ fileprivate extension ServiceProvider {
                             
                             let httpResponse = response as! HTTPURLResponse
                             self.process(response: httpResponse, object: nil, error: error, request: request, completion: completion)
+                            endTask()
                         })
                         
                     } else {
@@ -230,6 +244,7 @@ fileprivate extension ServiceProvider {
                             }
                             let httpResponse = response as! HTTPURLResponse
                             self.process(response: httpResponse, object: object, error: error, request: request, completion: completion)
+                            endTask()
                         })
                     }
                 }
@@ -239,6 +254,7 @@ fileprivate extension ServiceProvider {
                     
                     let httpResponse = response as! HTTPURLResponse
                     self.process(response: httpResponse, object: object, error: error, request: request, completion: completion)
+                    endTask()
                 })
             }
             
