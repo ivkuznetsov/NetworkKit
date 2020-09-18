@@ -37,6 +37,9 @@ open class JSONResponseSerializer: AFJSONResponseSerializer {
                 } else if let number = Double(string) {
                     pointer.pointee = nil
                     return number
+                } else if string == "null" {
+                    pointer.pointee = nil
+                    return NSNull()
                 }
             }
         }
