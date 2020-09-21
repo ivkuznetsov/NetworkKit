@@ -8,12 +8,12 @@
 
 import Foundation
 
-public typealias RequestCompletion<T> = (T, Error?)->()
+public typealias RequestCompletion<T> = (T?, Error?)->()
 
 private class CompletionWrapper<T> {
-    var completion: (T, Error?)->()
+    var completion: (T?, Error?)->()
     
-    init?(completion: ((T, Error?)->())?) {
+    init?(completion: ((T?, Error?)->())?) {
         if let completion = completion {
             self.completion = completion
         } else {
@@ -37,6 +37,8 @@ private class ProgressWrapper {
 public final class OperationCombiner {
     
     private var processingRequests: [String : [String : [AnyObject]]] = [:]
+    
+    public init() {}
     
     public func run<T>(_ type: T.Type, key: String?, completion: RequestCompletion<T>?, progress: RequestProgress?, closure: (@escaping RequestCompletion<T>, @escaping RequestProgress) -> AnyObject?) -> AnyObject? {
         

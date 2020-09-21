@@ -104,7 +104,9 @@ fileprivate extension ServiceProvider {
     func internalSend<T: ServiceRequest>(_ originalRequest: T, progress: RequestProgress?, completion: ((T, Error?)->())?) -> URLSessionTask? {
         return combiner.run(type(of: originalRequest),
                             key: originalRequest.reusing()?.reuseId(),
-                            completion: completion,
+                            completion: { (request, error) in
+                                completion?(request ?? originalRequest, error)
+                            },
                             progress: progress) { (completion, progress) -> AnyObject? in
                                 
                                 return enque(originalRequest, progress:progress, completion: { (innerRequest, error) in
