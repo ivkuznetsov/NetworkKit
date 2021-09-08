@@ -171,10 +171,7 @@ fileprivate extension ServiceProvider {
                                                             }, error: &error)
             
         } else {
-            request = requestSerializer.request(withMethod: serviceRequest.method(),
-                                                urlString: (URL(string:serviceRequest.path(), relativeTo:baseURL!) ?? baseURL!).absoluteString,
-                                                parameters: serviceRequest.requestContent(),
-                                                error: &error)
+            request = try requestSerializer.request(withMethod: serviceRequest.method(), urlString: (URL(string:serviceRequest.path(), relativeTo:baseURL!) ?? baseURL!).absoluteString, parameters: serviceRequest.requestContent())
         }
         
         if let error = error {
