@@ -19,6 +19,6 @@ let package = Package(
       ),
     ],
     targets: [
-        .target(name: "NetworkKit", path: "./NetworkKit", exclude: ["NetworkKit.h", "Info.plist"])
+        .target(name: "NetworkKit", dependencies: ["AFNetworking"], path: "./NetworkKit", exclude: ["NetworkKit.h", "Info.plist"])
     ]
 )

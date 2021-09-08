@@ -19,60 +19,7 @@
 		D79A370026E8D8DB002496E8 /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = D79A36FF26E8D8DB002496E8 /* AFNetworking */; };
 		D7B46C331FD8945D000C0EBA /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B46C321FD8945D000C0EBA /* BaseRequest.swift */; };
 		D7B46C351FD89A05000C0EBA /* BaseFileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B46C341FD89A05000C0EBA /* BaseFileRequest.swift */; };
-		D7CB5CE41FE5AC0300341E60 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CB5CD51FE5ABD700341E60 /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D7CB5CD41FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 299522391BBF104D00859F49;
-			remoteInfo = "AFNetworking iOS";
-		};
-		D7CB5CD61FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 299522651BBF129200859F49;
-			remoteInfo = "AFNetworking watchOS";
-		};
-		D7CB5CD81FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 299522771BBF136400859F49;
-			remoteInfo = "AFNetworking macOS";
-		};
-		D7CB5CDA1FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2987B0A51BC408A200179A4C;
-			remoteInfo = "AFNetworking tvOS";
-		};
-		D7CB5CDC1FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 298D7C3B1BC2C79500FD3B3E;
-			remoteInfo = "AFNetworking iOS Tests";
-		};
-		D7CB5CDE1FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 298D7C4A1BC2C7B200FD3B3E;
-			remoteInfo = "AFNetworking macOS Tests";
-		};
-		D7CB5CE01FE5ABD700341E60 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2987B0AE1BC408A200179A4C;
-			remoteInfo = "AFNetworking tvOS Tests";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D775A8231FD9507B00786AA0 /* Collection+PrettyPrinted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+PrettyPrinted.swift"; sourceTree = "<group>"; };
@@ -88,7 +35,6 @@
 		D7949A851FC49B01000D2C4F /* FileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRequest.swift; sourceTree = "<group>"; };
 		D7B46C321FD8945D000C0EBA /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		D7B46C341FD89A05000C0EBA /* BaseFileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFileRequest.swift; sourceTree = "<group>"; };
-		D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +42,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7CB5CE41FE5AC0300341E60 /* AFNetworking.framework in Frameworks */,
 				D79A370026E8D8DB002496E8 /* AFNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				D794994A1FC480F2000D2C4F /* NetworkKit */,
-				D7CB5CC91FE5ABC000341E60 /* Frameworks */,
 				D79499491FC480F2000D2C4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,28 +90,6 @@
 				D775A8231FD9507B00786AA0 /* Collection+PrettyPrinted.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		D7CB5CC91FE5ABC000341E60 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		D7CB5CCB1FE5ABD700341E60 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D7CB5CD51FE5ABD700341E60 /* AFNetworking.framework */,
-				D7CB5CD71FE5ABD700341E60 /* AFNetworking.framework */,
-				D7CB5CD91FE5ABD700341E60 /* AFNetworking.framework */,
-				D7CB5CDB1FE5ABD700341E60 /* AFNetworking.framework */,
-				D7CB5CDD1FE5ABD700341E60 /* AFNetworking iOS Tests.xctest */,
-				D7CB5CDF1FE5ABD700341E60 /* AFNetworking macOS Tests.xctest */,
-				D7CB5CE11FE5ABD700341E60 /* AFNetworking tvOS Tests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,70 +157,12 @@
 			);
 			productRefGroup = D79499491FC480F2000D2C4F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D7CB5CCB1FE5ABD700341E60 /* Products */;
-					ProjectRef = D7CB5CCA1FE5ABD700341E60 /* AFNetworking.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D79499471FC480F2000D2C4F /* NetworkKit */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D7CB5CD51FE5ABD700341E60 /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = D7CB5CD41FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7CB5CD71FE5ABD700341E60 /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = D7CB5CD61FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7CB5CD91FE5ABD700341E60 /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = D7CB5CD81FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7CB5CDB1FE5ABD700341E60 /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = D7CB5CDA1FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7CB5CDD1FE5ABD700341E60 /* AFNetworking iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AFNetworking iOS Tests.xctest";
-			remoteRef = D7CB5CDC1FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7CB5CDF1FE5ABD700341E60 /* AFNetworking macOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AFNetworking macOS Tests.xctest";
-			remoteRef = D7CB5CDE1FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D7CB5CE11FE5ABD700341E60 /* AFNetworking tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AFNetworking tvOS Tests.xctest";
-			remoteRef = D7CB5CE01FE5ABD700341E60 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D79499431FC480F2000D2C4F /* Sources */ = {
